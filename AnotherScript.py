@@ -64,7 +64,7 @@ class DownloadFile(object):
             self.libtdir = "libtorrent"
         else:
             filename = version + ".tar.gz"
-            url = "https://github.com/rakshasa/libtorrent/archive/" + version + ".tar.gz"
+            url = "https://github.com/rakshasa/libtorrent/archive/v" + version + ".tar.gz"
             self.downloadFile(url, filename)
             self.libtdir = self.uncompressedTarGz(filename)
         return
