@@ -131,14 +131,14 @@ class Rtorrent(object):
     def configureLibtorrent(self):
         #autogen and check
         output1 = subprocess.check_output(
-            ["/root/libtorrent/autogen.sh"]).decode('utf-8')
+            ["/root/libtorrent-0.13.6/autogen.sh"]).decode('utf-8')
         if "ready to configure" not in output1:
             print "autogen error"
             exit(1)
 
         #configure and check
         output2 = subprocess.check_output(
-            ["/root/libtorrent/configure", "--disable-debug"]).decode('utf-8')
+            ["/root/libtorrent-0.13.6/configure", "--disable-debug"]).decode('utf-8')
         if "executing depfiles commands" not in output2:
             print "configure error"
             exit(1)
@@ -168,12 +168,12 @@ class Rtorrent(object):
     def configureRtorrent(self):
         #autogen and check
         output1 = subprocess.check_output(
-            ["/root/rtorrent/autogen.sh"]).decode('utf-8')
+            ["/root/rtorrent-0.9.6/autogen.sh"]).decode('utf-8')
         if "ready to configure" not in output1:
             exit(1)
 
         #configure and check
-        output2 = subprocess.check_output(["/root/rtorrent/configure", "--with-xmlrpc-c",
+        output2 = subprocess.check_output(["/root/rtorrent-0.9.6/configure", "--with-xmlrpc-c",
                                            "--with-ncurses", "--enable-ipv6", "--disable-debug"], env=new_env).decode('utf-8')
         if "executing depfiles commands" not in output2:
             exit(2)
