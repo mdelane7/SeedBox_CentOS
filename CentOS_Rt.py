@@ -90,9 +90,9 @@ class Rtorrent(object):
         try:
             os.chdir("/root")
             p1 = subprocess.check_call(
-                "wget https://github.com/rakshasa/libtorrent/archive/" + lversion + ".tar.gz", shell=True)
+                "wget https://github.com/rakshasa/libtorrent/archive/v" + lversion + ".tar.gz", shell=True)
             subprocess.check_call(
-                "tar xf " + lversion + ".tar.gz", shell = True)
+                "tar xf libtorrent- " + lversion + ".tar.gz", shell = True)
         except:
             print "Get libtorrent error"
             exit(1)
@@ -103,9 +103,9 @@ class Rtorrent(object):
         try:
             os.chdir("/root")
             p1 = subprocess.check_call(
-                "wget https://github.com/rakshasa/rtorrent/archive/" + rversion + ".tar.gz", shell=True)
+                "wget https://github.com/rakshasa/rtorrent/archive/v" + rversion + ".tar.gz", shell=True)
             subprocess.check_call(
-                "tar xf" + rversion + ".tar.gz", shell = True)
+                "tar xf rtorrent- " + rversion + ".tar.gz", shell = True)
         except:
             print "Get rtorrent error"
             exit(1)
